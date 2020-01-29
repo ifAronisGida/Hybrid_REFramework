@@ -1657,9 +1657,9 @@
     "restore": {
       "projectUniqueName": "Glencore_Outgoing_Invoice_Processing",
       "projectName": "Glencore_Outgoing_Invoice_Processing",
-      "projectPath": "C:\\Users\\agida\\Documents\\UiPath\\Glencore_Outgoing_Invoice_Processing\\.local",
+      "projectPath": "C:\\Users\\agida\\Documents\\UiPath\\Hybrid_REFramework\\.local",
       "packagesPath": "C:\\Users\\agida\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\agida\\Documents\\UiPath\\Glencore_Outgoing_Invoice_Processing\\.local"
+      "outputPath": "C:\\Users\\agida\\Documents\\UiPath\\Hybrid_REFramework\\.local"
     },
     "frameworks": {
       "net461": {

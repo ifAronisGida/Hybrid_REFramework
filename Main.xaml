@@ -64,7 +64,7 @@
       <AssemblyReference>System.ValueTuple</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <StateMachine InitialState="{x:Reference __ReferenceID2}" sap2010:Annotation.AnnotationText="-- ReFrameWork - Robotic Enterprise Framework --&#xA;--GLENCORE--" DisplayName="Glencore Invoicing Process" sap:VirtualizedContainerService.HintSize="968,798.4" sap2010:WorkflowViewState.IdRef="StateMachine_1">
+  <StateMachine InitialState="{x:Reference __ReferenceID2}" sap2010:Annotation.AnnotationText="-- ReFrameWork - Robotic Enterprise Framework --&#xA;--TEMPLATE--" DisplayName="General Business Process" sap:VirtualizedContainerService.HintSize="968,798.4" sap2010:WorkflowViewState.IdRef="StateMachine_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -428,7 +428,7 @@
                   <Transition.To>
                     <State x:Name="__ReferenceID2" sap2010:Annotation.AnnotationText="Read Config, Init Applications" DisplayName="Init" sap:VirtualizedContainerService.HintSize="240,118.4" sap2010:WorkflowViewState.IdRef="State_2">
                       <State.Entry>
-                        <TryCatch DisplayName="Catch intialization exceptions" sap:VirtualizedContainerService.HintSize="436.8,604.8" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+                        <TryCatch DisplayName="Catch intialization exceptions" sap:VirtualizedContainerService.HintSize="433.6,295.2" sap2010:WorkflowViewState.IdRef="TryCatch_2">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -528,10 +528,10 @@
                             </Sequence>
                           </TryCatch.Try>
                           <TryCatch.Catches>
-                            <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="403.2,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_3">
+                            <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,130.4" sap2010:WorkflowViewState.IdRef="Catch`1_3">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
@@ -610,16 +610,68 @@
                           <Transition.To>
                             <State x:Name="__ReferenceID4" sap2010:Annotation.AnnotationText="Get data and upload queue items" DisplayName="Dispatch data" sap:VirtualizedContainerService.HintSize="240,119.2" sap2010:WorkflowViewState.IdRef="State_5">
                               <State.Entry>
-                                <Flowchart DisplayName="Dispatcher" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+                                <Sequence sap:VirtualizedContainerService.HintSize="753.6,1153.6" sap2010:WorkflowViewState.IdRef="Sequence_23">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <Flowchart.StartNode>
-                                    <x:Null />
-                                  </Flowchart.StartNode>
-                                </Flowchart>
+                                  <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="712,1060.8" sap2010:WorkflowViewState.IdRef="TryCatch_7">
+                                    <TryCatch.Try>
+                                      <Sequence DisplayName="Dispatch Sequence" sap:VirtualizedContainerService.HintSize="675.2,829.6" sap2010:WorkflowViewState.IdRef="Sequence_24">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <Flowchart DisplayName="Dispatcher" sap:VirtualizedContainerService.HintSize="633.6,636.8" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                              <av:Point x:Key="ShapeLocation">270,2.5</av:Point>
+                                              <av:Size x:Key="ShapeSize">60,75.2</av:Size>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <Flowchart.StartNode>
+                                            <x:Null />
+                                          </Flowchart.StartNode>
+                                        </Flowchart>
+                                        <Assign DisplayName="Switch dispatched" sap:VirtualizedContainerService.HintSize="633.6,60" sap2010:WorkflowViewState.IdRef="Assign_21">
+                                          <Assign.To>
+                                            <OutArgument x:TypeArguments="x:Boolean">[Dispatched]</OutArgument>
+                                          </Assign.To>
+                                          <Assign.Value>
+                                            <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                                          </Assign.Value>
+                                        </Assign>
+                                      </Sequence>
+                                    </TryCatch.Try>
+                                    <TryCatch.Catches>
+                                      <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="678.4,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_8">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <ActivityAction x:TypeArguments="s:Exception">
+                                          <ActivityAction.Argument>
+                                            <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                                          </ActivityAction.Argument>
+                                          <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_20">
+                                            <Assign.To>
+                                              <OutArgument x:TypeArguments="s:Exception">[SystemError]</OutArgument>
+                                            </Assign.To>
+                                            <Assign.Value>
+                                              <InArgument x:TypeArguments="s:Exception">[exception]</InArgument>
+                                            </Assign.Value>
+                                          </Assign>
+                                        </ActivityAction>
+                                      </Catch>
+                                    </TryCatch.Catches>
+                                  </TryCatch>
+                                </Sequence>
                               </State.Entry>
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
