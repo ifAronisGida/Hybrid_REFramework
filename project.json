@@ -1,6 +1,6 @@
 {
-  "name": "Glencore_Outgoing_Invoice_Processing",
-  "description": "REFramework for Glencore Outgoing Goods Invoice Processing by Mortoff",
+  "name": "Glencore_Calculation_Import",
+  "description": "Robot workflow for the calculation import process",
   "main": "Main.xaml",
   "dependencies": {
     "UiPath.Credentials.Activities": "[1.1.6479.13204]",
